@@ -18,6 +18,22 @@ public class SimpleService {
     public String mergeStrings(String a, String b){
         return a + b;
     }
+
+    public String getMagicString(String baseString) {
+        String modifiedString = baseString;
+        if (baseString.length() % 2 > 0) {
+            modifiedString = mergeStrings(modifiedString, " a");
+        }
+        if (baseString.length() > 3) {
+            modifiedString = mergeStrings(modifiedString, " b");
+        }
+
+        if (baseString.contains(" ")) {
+            modifiedString = mergeStrings(modifiedString, " c");
+        }
+        return modifiedString;
+    }
+
     public String getSharedField() {
         return sharedField;
     }
